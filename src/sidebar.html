@@ -1,0 +1,128 @@
+<div>
+		<nav>
+		  <div>
+			<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+				<i @click="show = !show" class="fas fa-bars"></i>
+				<i class="fas fa-user-circle fa-2x color"></i>
+				<h3>Contacts</h3>
+				<form method="POST">
+					<input type="search" name="search" class="form-control search" placeholder="Search">
+				</form>	
+				<i class="fas fa-th grid"></i>
+			</div>
+			<div class="sidebar">
+				
+					<transition-group name="fade">
+
+					<a href="#" :key="1"><button v-show="show"  class="btn btn-default"><i class="fas fa-plus"></i> Create Contact </button> </a>
+					
+					<a href="#"  :key="2"><li v-show="show"><i class="fas fa-user font"></i>Contacts</li></a>
+
+					<a href="#" :key="3"><li v-show="show" ><i class="fas fa-recycle font"></i>Frequently Contacted</li></a>
+					
+					<a href="#" :key="4"><li v-show="show" ><i class="fas fa-copy font"></i>Duplicates</li></a>
+					
+					<a href="#" :key="5"><li v-show="show" ><i class="fas fa-angle-down font"></i>Labels</li></a> 
+					
+					<a href="#" :key="6"><li v-show="show" ><i class="fas fa-angle-down font"></i>More</li></a> 
+					
+					<a href="#" :key="7"><li v-show="show" ><i class="fas fa-wallet font"></i>Other Contacts</li></a>
+					
+					<a href="#" :key="8"><li v-show="show" ><i class="fas fa-cog font"></i>Settings</li></a>
+					
+					<a href="#" :key="9"><li v-show="show" ><i class="fas fa-comment-alt font"></i>Send Feedback</li></a>
+					
+					<a href="#" :key="10"><li v-show="show" ><i class="fas fa-question-circle font"></i>Help</li></a>
+				</transition-group>
+			</div>
+		    <!-- <router-view></router-view> -->
+		  </div>
+		</nav>
+		<div class="sidebar">
+			
+		</div>
+	</div>
+
+	<style scoped>
+nav{
+	border: transparent;
+	margin: 0;
+	max-height: 10px;
+}
+h3{
+	margin-top: 10px;
+	opacity: .54;
+	cursor: pointer;	
+	vertical-align: middle;
+	font-size: 22px;
+	line-height: 24px;
+}
+div i{
+	padding:10px;
+}
+div i:hover{ 
+	cursor: pointer;
+	background-color: #eee;
+	border-radius: 75px;
+}
+li{
+	padding-bottom: 20px;
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+ul li i{
+	padding: 0 20px;
+	text-decoration: none;
+}
+ul a{
+	cursor: pointer;
+	text-decoration: none;
+}
+
+ul a:active{
+	background-color: #42a442;
+}
+ button{
+	border-radius: 255px;
+	border: 1px solid transparent;
+	background-color: white;
+	z-index: 100;
+}
+ button:hover{
+	box-shadow: 100px red;
+}
+.color{
+	color: #4286f4;
+}
+.search {
+	border: transparent;
+	margin-left: 100px;
+	padding: 10px;
+	background-color: rgba(0,0,0,0.04);
+	width: 600px;
+}
+.search:active{
+	width: 700px;
+	transition: .75s;
+	background-color: #fff;
+}
+.grid{
+	margin-left: 300px;
+}
+.sidebar{
+	width: 250px;
+	min-height: 9000px;
+}
+.font:hover {
+	background-color: transparent; 
+}
+
+.fade-enter-fade, .fade-leave-active{
+	transition: opacity 1000s;
+}
+.fade-enter, .fade-leave-to{
+	opacity:0;
+}
+</style>
